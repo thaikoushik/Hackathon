@@ -1,9 +1,46 @@
+
+<html>
+  <head>
+    <meta charset="utf-8">
+
+  </head>
+  <body>
+    <div id="chart"></div>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script>
+
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        console.log({{travel}});
+        var data = google.visualization.arrayToDataTable([
+          ['Task', 'Expense'],
+          ['Food',     {{food}}],
+          ['Travel',     {{travel}}],
+          ['shopping',      {{shopping}}],
+          ['Others',  {{others}}],
+          ['Fixed Expenses',{{result}}]
+          
+        ]);
+
+        var options = {
+          title: 'My Expenses'
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+        chart.draw(data, options);
+      }
+</script>
 <div class="row">
     <div class="col-md-8 col-md-offse-2">
-        <h1>User Profile Update</h1>
-        <hr>
-        
-<a href="/update/">Update</a>
-<a href="/expense/">Expense</a>          
+        {{message}}
+<a href="/update/">Update Profile</a>
+<a href="/expense/">Add Expense</a>          
+    <p>Add minimum of 5 different expenses to see the pie Cart</p>
             </div>
               </div>
+<div id="piechart" style="width: 900px; height: 500px;"></div>
+  </body>
+</html>

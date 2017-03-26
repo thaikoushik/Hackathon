@@ -43,7 +43,7 @@ router.post('/signup',passport.authenticate('local.signup',{
     if(req.session.oldurl){
         var oldUrl = req.session.oldurl;
         req.session.oldurl = null;
-        res.redirect(oldUrl);
+        res.redirect('/user/profile');
         
     } else{
         res.redirect('/user/profile');
