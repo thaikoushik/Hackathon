@@ -10,13 +10,22 @@ router.get('/',function(req,res,next){
 
 
 router.post('/saveprofile', isLoggedIn, function(req,res,next){
+    var incomeType = req.body.selected_value;
+    var incomeValue = req.body.monthincome;
+
+    var finalIncome = incomeType == 1? incomeValue : incomeValue/12;
+
     var profile = new Profile({
         user:req.user,
-        expenditure:req.body.expenditure,
-        income:req.body.monthincome,
-        savingsMin:req.body.savmin,
+        expenditure:req.body.expenditure1,
+        expenditure2:req.body.expenditure2,
+        expenditure3:req.body.expenditure3,
+        expenditure4:req.body.expenditure4,
+        expenditure5:req.body.expenditure5,
+        income:finalIncome,
         feessix:req.body.fess6
     });
+    console.log(profile);
     profile.save(function(err,result){
             req.flash('success','Successfully bought the product');
             req.session.cart = null;
