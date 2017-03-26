@@ -6,28 +6,52 @@
 
         <form action="/saveprofile" method="post">
            <div class="form-group">
-                <lable for="email">First Name:</lable>
-                <input type="text" id="fname" name="fname" class="form-control">
+                
+                <input type="text" id="fname" placeholder="First Name" name="fname" class="form-control" required>
             </div>
             <div class="form-group">
-                <lable for="email">Last Name:</lable>
-                <input type="text" id="lname" name="lname" class="form-control">
+                <input type="text" id="lname" name="lname" placeholder="Last Name" class="form-control" required>
             </div>
             <div class="form-group">
-                <lable for="email">Expenditure:</lable>
-                <input type="text" id="expenditure" name="expenditure" class="form-control">
+                <input type="number" id="expenditure1" name="expenditure1" placeholder="Expenditure 1" class="form-control" required>
             </div>
-            <div class="form-group">
-                <lable for="email">Monthly Income</lable>
-                <input type="text" id="monthincome" name="monthincome" class="form-control">
+             <div class="form-group">
+                
+                <input type="number" id="expenditure2" placeholder="Expenditure 2" name="expenditure2" class="form-control" required>
             </div>
-            <div class="form-group">
-                <lable for="email">Savings Minimum</lable>
-                <input type="text" id="savmin" name="savmin" class="form-control">
+             <div class="form-group">
+                
+                <input type="number" id="expenditure3" placeholder="Expenditure 3" name="expenditure3" class="form-control" >
             </div>
+             <div class="form-group">
+                
+                <input type="number" id="expenditure4" placeholder="Expenditure 4" name="expenditure4" class="form-control" >
+            </div>
+             <div class="form-group">
+                
+                <input type="number" id="expenditure5" placeholder="Expenditure 5" name="expenditure5" class="form-control" >
+            </div>
+
+<div class="form-group">
+            <div class="input-group">
+            <input type="number" placeholder="Income*" class="form-control" name="monthincome" style="height: 33px;" required>
+            <div class="input-group-btn bs-dropdown-to-select-group" id="incometype">
+                    <button type="button" class="btn btn-default dropdown-toggle as-is bs-dropdown-to-select" data-toggle="dropdown">
+                        <span data-bind="bs-drp-sel-label">Select...</span>
+                        <input type="hidden" name="selected_value" data-bind="bs-drp-sel-value" value="">
+                        <span class="caret"></span>
+                        <span class="sr-only">Toggle Dropdown</span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu" name="selectpicker">
+                        <li data-value="1" ><a href="#">Monthly</a></li>
+                        <li data-value="2"><a href="#">Yearly</a></li>
+                    </ul>
+                </div>
+              </div>
+
             <div class="form-group">
                 <lable for="email">Fees for 6Mo:</lable>
-                <input type="text" id="fess6" name="fess6" class="form-control">
+                <input type="number" id="fess6" name="fess6" class="form-control" required>
             </div>
             <button type="submit" class="btn btn-primary">Save</button>
         </form>
